@@ -11,7 +11,9 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 // import { Switch, Route } from 'react-router-dom';
 
-// import HomePage from 'containers/HomePage/Loadable';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+
 // import FeaturePage from 'containers/FeaturePage/Loadable';
 // import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import CitySelect from 'containers/CitySelect';
@@ -30,17 +32,19 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - TPWeather"
+        defaultTitle="TPWeather"
       >
         <meta name="description" content="A React.js Weather Forecast application" />
       </Helmet>
-      {/* <Switch>
-        <Route exact path="/" component={CitySelect} />
-        <Route path="" component={NotFoundPage} />
-      </Switch> */}
+      {/* <Switch> */}
+      {/* <Route exact path="/" component={CitySelect} /> */}
+      {/* <Route path="" component={NotFoundPage} /> */}
+      {/* </Switch> */}
+      <Header />
       <CitySelect />
       <WeatherPage />
+      <Footer />
     </AppWrapper>
   );
 }
