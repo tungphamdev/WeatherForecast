@@ -18,6 +18,7 @@ import dunno from '../../icons/dunno.png';
 import clear from '../../icons/cloudy1.png';
 import shower from '../../icons/shower3.png';
 
+
 export class WeatherPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   setIconWeather = (main) => {
     switch (main) {
@@ -28,6 +29,8 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
       case 'Clear':
         return clear;
       case 'Drizzle':
+        return shower;
+      case 'Rain':
         return shower;
       default:
         return dunno;

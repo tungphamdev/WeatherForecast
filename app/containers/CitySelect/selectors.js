@@ -7,6 +7,11 @@ const makeCitySelected = () => createSelector(
   (cityState) => cityState.get('citySelected')
 );
 
+const makeCountrySelected = () => createSelector(
+  selectCity,
+  (cityState) => cityState.get('countrySelected')
+);
+
 const makeWeatherSelected = () => createSelector(
   selectCity,
   (cityState) => cityState.get('weatherData')
@@ -16,4 +21,5 @@ export {
   selectCity,
   makeCitySelected,
   makeWeatherSelected,
+  makeCountrySelected,
 };

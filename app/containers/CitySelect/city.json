@@ -1,37 +1,100 @@
 [{
-        "id": 1580578,
-        "name": "Thành phố Hồ Chí Minh",
-        "country": "VN",
-        "coord": {
-            "lon": 106.666672,
-            "lat": 10.83333
-        }
-    },
-    {
-        "id": 1581129,
-        "name": "Thủ Ðô Hà Nội",
-        "country": "VN",
-        "coord": {
-            "lon": 105.883331,
-            "lat": 21.116671
-        }
-    },
-    {
-        "id": 5128638,
-        "name": "New York",
-        "country": "US",
-        "coord": {
-            "lon": -75.499901,
-            "lat": 43.000351
-        }
-    },
-    {
-        "id": 2968815,
-        "name": "Paris",
-        "country": "FR",
-        "coord": {
-            "lon": 2.3486,
-            "lat": 48.853401
-        }
+    "id": 1580578,
+    "name": "Thành phố Hồ Chí Minh",
+    "country": "VN",
+    "coord": {
+      "lon": 106.666672,
+      "lat": 10.83333
     }
+  },
+  {
+    "id": 1562414,
+    "name": "Vung Tau",
+    "country": "VN",
+    "coord": {
+      "lon": 107.084259,
+      "lat": 10.34599
+    }
+  },
+  {
+    "id": 1568770,
+    "name": "Quang Ngai",
+    "country": "VN",
+    "coord": {
+      "lon": 108.800003,
+      "lat": 15.11667
+    }
+  },
+  {
+    "id": 1584071,
+    "name": "Da Lat",
+    "country": "VN",
+    "coord": {
+      "lon": 108.441933,
+      "lat": 11.94646
+    }
+  },
+  {
+    "id": 1580240,
+    "name": "Hue",
+    "country": "VN",
+    "coord": {
+      "lon": 107.599998,
+      "lat": 16.466669
+    }
+  },
+  {
+    "id": 1584169,
+    "name": "Tỉnh Ðắc Lắk",
+    "country": "VN",
+    "coord": {
+      "lon": 108.166672,
+      "lat": 12.83333
+    }
+  },
+  {
+    "id": 1586896,
+    "name": "Buon Ma Thuot",
+    "country": "VN",
+    "coord": {
+      "lon": 108.050003,
+      "lat": 12.66667
+    }
+  },
+  {
+    "id": 1571058,
+    "name": "Phan Thiet",
+    "country": "VN",
+    "coord": {
+      "lon": 108.099998,
+      "lat": 10.93333
+    }
+  },
+  {
+    "id": 1581129,
+    "name": "Thủ Ðô Hà Nội",
+    "country": "VN",
+    "coord": {
+      "lon": 105.883331,
+      "lat": 21.116671
+    }
+  },
+  {
+    "id": 5128638,
+    "name": "New York",
+    "country": "US",
+    "coord": {
+      "lon": -75.499901,
+      "lat": 43.000351
+    }
+  },
+  {
+    "id": 2968815,
+    "name": "Paris",
+    "country": "FR",
+    "coord": {
+      "lon": 2.3486,
+      "lat": 48.853401
+    }
+  }
 ]

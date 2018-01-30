@@ -17,21 +17,32 @@ import styled from 'styled-components';
 
 import Select from 'components/Select';
 
-import { makeCitySelected } from './selectors';
+import { makeCitySelected, makeCountrySelected } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import * as cityActions from './actions';
-import cityList from './city.json';
-
+import cityList from './city.list.min.json';
+import countryList from './country_codes.json';
 const SelectWrapper = styled.div`
   margin-top: 20px;
 `;
 
 export class CitySelect extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  selectCityByCountry = (country) => {
+    const cities = cityList.filter((city) => { // eslint-disable-line
+      return city.country === country;
+    });
+    return cities;
+  };
   render() {
+    // const countries = cityList.map((city) => { // eslint-disable-line
+    //   return city.country;
+    // });
+    // console.log(countries);
     return (
       <SelectWrapper>
-        <Select list={cityList} action={this.props.actions.selectCity} defaultName={'Choose a city'} />
+        <Select list={countryList} defaultName={'Choose a country'} action={this.props.actions.selectCountry} />
+        <Select list={this.selectCityByCountry(this.props.countrySelect)} action={this.props.actions.selectCity} defaultName={'Choose a city'} />
       </SelectWrapper>
     );
   }
@@ -39,6 +50,7 @@ export class CitySelect extends React.Component { // eslint-disable-line react/p
 
 const mapStateToProps = createStructuredSelector({
   citySelect: makeCitySelected(),
+  countrySelect: makeCountrySelected(),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -47,6 +59,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 CitySelect.propTypes = {
   actions: PropTypes.object,
+  countrySelect: PropTypes.string,
 };
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
