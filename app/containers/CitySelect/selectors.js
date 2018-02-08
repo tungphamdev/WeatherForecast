@@ -17,9 +17,15 @@ const makeWeatherSelected = () => createSelector(
   (cityState) => cityState.get('weatherData')
 );
 
+const makeForecastSelected = () => createSelector(
+  selectCity,
+  (cityState) => cityState.get('forecastData')
+);
+
 export {
   selectCity,
   makeCitySelected,
   makeWeatherSelected,
   makeCountrySelected,
+  makeForecastSelected,
 };

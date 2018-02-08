@@ -9,7 +9,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { makeWeatherSelected } from 'containers/CitySelect/selectors';
+import { makeWeatherSelected, makeForecastSelected } from 'containers/CitySelect/selectors';
+
+import ForecastCard from 'components/CardForecast';
+
 import './weather.css';
 
 import cloud from '../../icons/cloudy5.png';
@@ -39,31 +42,37 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
 
   render() {
     const weather = this.props.weatherData;
+    const forecast = this.props.forecastData;
+    console.log(forecast);
     if (!weather.name) return null;
 
     const weatherTemp = Math.round(weather.main.temp - 273.15);
     return (
-      <div className="weather">
-
-        <h1 className="title">{weather.name}</h1>
-        <div className="container">
-          <div className="card">
-            {/* <span className="line-title">Status:</span> */}
-            <img src={this.setIconWeather(weather.weather[0].main)} alt={'iconWeather'} />
-            <div className="description">{weather.weather[0].description}</div>
+      <div>
+        <div className="weather">
+          <h1 className="title">{weather.name}</h1>
+          <div className="container">
+            <div className="card">
+              {/* <span className="line-title">Status:</span> */}
+              <img src={this.setIconWeather(weather.weather[0].main)} alt={'iconWeather'} />
+              <div className="description">{weather.weather[0].description}</div>
+            </div>
+            <div className="card">
+              <span className="line-title">Temperature</span>
+              <span className="line-value">{weatherTemp} °C</span>
+            </div>
+            <div className="card">
+              <span className="line-title">Wind</span>
+              <span className="line-value">{weather.wind.speed} m/s</span>
+            </div>
+            <div className="card">
+              <span className="line-title">Humidity</span>
+              <span className="line-value">{weather.main.humidity} %</span>
+            </div>
           </div>
-          <div className="card">
-            <span className="line-title">Temperature</span>
-            <span className="line-value">{weatherTemp} °C</span>
-          </div>
-          <div className="card">
-            <span className="line-title">Wind</span>
-            <span className="line-value">{weather.wind.speed} m/s</span>
-          </div>
-          <div className="card">
-            <span className="line-title">Humidity</span>
-            <span className="line-value">{weather.main.humidity} %</span>
-          </div>
+        </div>
+        <div className="forecast">
+          <ForecastCard forecastData={forecast.list[0]} />
         </div>
       </div>
     );
@@ -72,10 +81,12 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
 
 WeatherPage.propTypes = {
   weatherData: PropTypes.object,
+  forecastData: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   weatherData: makeWeatherSelected(),
+  forecastData: makeForecastSelected(),
 });
 
 const withConnect = connect(mapStateToProps);

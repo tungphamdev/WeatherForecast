@@ -9,6 +9,8 @@ import {
   WEATHER_FETCH_SUCCEEDED,
   WEATHER_FETCH_FAILED,
   SELECT_COUNTRY,
+  FORECAST_FETCH_FAILED,
+  FORECAST_FETCH_SUCCEEDED,
 } from './constants';
 
 export function selectCity(id) {
@@ -28,6 +30,20 @@ export function weatherFetchSucceeded(weatherData) {
 export function weatherFetchFailed(message) {
   return {
     type: WEATHER_FETCH_FAILED,
+    error: message,
+  };
+}
+
+export function forecastFetchSucceeded(forecastData) {
+  return {
+    type: FORECAST_FETCH_SUCCEEDED,
+    forecastData,
+  };
+}
+
+export function forecastFetchFailed(message) {
+  return {
+    type: FORECAST_FETCH_FAILED,
     error: message,
   };
 }
