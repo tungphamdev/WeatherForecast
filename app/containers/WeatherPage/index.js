@@ -43,7 +43,6 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
   render() {
     const weather = this.props.weatherData;
     const forecast = this.props.forecastData;
-    console.log(forecast);
     if (!weather.name) return null;
 
     const weatherTemp = Math.round(weather.main.temp - 273.15);
