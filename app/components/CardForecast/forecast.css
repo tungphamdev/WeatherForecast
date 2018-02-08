@@ -2,7 +2,15 @@
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  width: 200px;
+  width: 250px;
+  background: #2BC0E4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(-15deg, #2BC0E4,#EAECC6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(-15deg, #2BC0E4,#EAECC6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .forecast-icon {
@@ -13,6 +21,16 @@
 
 .forecast-description {
   font-size: 20px;
+  text-align: center;
 }
 
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
 
+}
+
+.forecast-title {
+  text-align: center;
+  
+}

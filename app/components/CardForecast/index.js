@@ -39,22 +39,24 @@ class CardForecast extends React.Component { // eslint-disable-line react/prefer
 
     return (
       <div className="forecast-card">
-        <div className="line-title">{weather.dt_txt}</div>
+        <div className="forecast-title">{weather.dt_txt}</div>
         <div className="forecast-icon">
           <img src={this.setIconWeather(weather.weather[0].main)} alt={'iconWeather'} />
           <div className="forecast-description line-title">{weather.weather[0].description}</div>
         </div>
-        <div className="forecast-item">
-          <div>Temperature</div>
-          <div>{weatherTemp} °C</div>
-        </div>
-        <div className="forecast-item">
-          <span className="line-title">Wind</span>
-          <span className="line-value">{weather.wind.speed} m/s</span>
-        </div>
-        <div className="forecast-item">
-          <span className="line-title">Humidity</span>
-          <span className="line-value">{weather.main.humidity} %</span>
+        <div>
+          <div className="forecast-item">
+            <div className="line-title">Temperature</div>
+            <div>{weatherTemp} °C</div>
+          </div>
+          <div className="forecast-item">
+            <span className="line-title">Wind</span>
+            <span>{weather.wind.speed} m/s</span>
+          </div>
+          <div className="forecast-item">
+            <span className="line-title">Humidity</span>
+            <span>{weather.main.humidity} %</span>
+          </div>
         </div>
       </div>
     );

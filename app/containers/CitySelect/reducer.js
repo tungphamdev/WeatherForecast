@@ -19,7 +19,7 @@ const initialState = fromJS({
   countrySelected: '',
   citySelected: '',
   weatherData: {},
-  forecastData: {},
+  forecastData: [],
 });
 
 function citySelectReducer(state = initialState, action) {

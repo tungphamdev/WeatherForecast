@@ -36,3 +36,7 @@
     /* font-weight: bold; */
     font-size: 43px;
 }
+
+.forecast {
+    display: flex;
+}
