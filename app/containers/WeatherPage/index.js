@@ -11,7 +11,7 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { makeWeatherSelected, makeForecastSelected } from 'containers/CitySelect/selectors';
 
-// import ForecastCard from 'components/CardForecast';
+import ForecastCard from 'components/CardForecast';
 
 import './weather.css';
 
@@ -42,7 +42,7 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
 
   render() {
     const weather = this.props.weatherData;
-    // const forecast = this.props.forecastData;
+    const forecast = this.props.forecastData;
     if (!weather.name) return null;
     const weatherTemp = Math.round(weather.main.temp - 273.15);
     return (
@@ -70,6 +70,9 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
           </div>
         </div>
         <div className="forecast">
+          {forecast.list.map((fc) =>
+            <ForecastCard key={fc.dt_txt.toString()} forecastData={fc} />
+          )}
         </div>
       </div>
     );
@@ -78,6 +81,7 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
 
 WeatherPage.propTypes = {
   weatherData: PropTypes.object,
+  forecastData: PropTypes.array,
 };
 
 const mapStateToProps = createStructuredSelector({

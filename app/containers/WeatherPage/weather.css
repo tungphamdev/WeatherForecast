@@ -39,4 +39,5 @@
 
 .forecast {
     display: flex;
+    overflow-x: scroll;
 }
