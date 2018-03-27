@@ -64,7 +64,7 @@ class CardForecast extends React.Component { // eslint-disable-line react/prefer
 }
 
 CardForecast.propTypes = {
-  forecastData: PropTypes.object,
+  forecastData: PropTypes.any,
 };
 
 export default CardForecast;

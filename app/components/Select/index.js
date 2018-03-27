@@ -15,9 +15,9 @@ const SelectBox = styled.select`
 `;
 
 class Select extends Component {
-  componentWillReceiveProps() {
+  // componentWillReceiveProps() {
 
-  }
+  // }
   onChangeSelect = (e) => {
     this.props.action(e.target.value);
   }
@@ -27,7 +27,7 @@ class Select extends Component {
       <SelectBox onChange={this.onChangeSelect} defaultValue="none">
         <option value="none" disabled>{defaultName}</option>
         {list.map(
-          (item) => <option key={item.index} value={item.id}>{item.name}</option>
+          (item, i) => <option key={`select_${i}`} value={item.id}>{item.name}</option> // eslint-disable-line
         )}
       </SelectBox>
     );

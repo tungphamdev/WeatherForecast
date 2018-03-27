@@ -81,7 +81,7 @@ export class WeatherPage extends React.Component { // eslint-disable-line react/
 
 WeatherPage.propTypes = {
   weatherData: PropTypes.object,
-  forecastData: PropTypes.array,
+  forecastData: PropTypes.any,
 };
 
 const mapStateToProps = createStructuredSelector({
